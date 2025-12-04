@@ -1,0 +1,15 @@
+{
+  "name": "minify-kit-dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "submodule": "git submodule add https://github.com/sangafabrice/minify-kit.git src",
+    "demo": "node demo"
+  },
+  "keywords": [],
+  "author": "Fabrice Sanga (https://github.com/sangafabrice)",
+  "license": "ISC",
+  "type": "module",
+  "workspaces": [ "src" ]
+}
