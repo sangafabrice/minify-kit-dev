@@ -1,5 +1,5 @@
 import "./log.js";
-import minify from "../src/index.js";
+import minify from "minify-kit-dev";
 
 /** @type {LoggedPromise} */
 const mincss = minify(

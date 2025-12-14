@@ -3,13 +3,31 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
+  "exports": {
+    "demo": "./lib/index.js",
+    "import": "./src/index.js"
+  },
   "scripts": {
-    "submodule": "git submodule add https://github.com/sangafabrice/minify-kit.git src",
-    "demo": "node demo"
+    "remote": "git remote add origin https://github.com/sangafabrice/minify-kit-dev.git",
+    "status:config": "git config --local status.submoduleSummary true",
+    "worktree:create": "cd src/&& git worktree add --orphan -b lib ../lib",
+    "worktree": "cd src/&&git worktree add ../lib",
+    "push:config": "git push --set-upstream origin main",
+    "push:src": "cd src/&&git push --all",
+    "commit:src": "cd src/&& git add --all && git commit --message",
+    "commit:lib": "cd lib/&& git add --all && git commit",
+    "amend:lib": "npm run commit:lib -- --no-edit --amend",
+    "commit": "git commit --all --message",
+    "push": "git push",
+    "build": "flow-remove-types src --out-dir lib --pretty --extensions .json,.js",
+    "demo": "node --conditions=demo demo"
   },
   "keywords": [],
   "author": "Fabrice Sanga (https://github.com/sangafabrice)",
   "license": "ISC",
   "type": "module",
-  "workspaces": [ "src" ]
+  "workspaces": [ "src" ],
+  "devDependencies": {
+    "flow-remove-types": "^2.293.0"
+  }
 }
