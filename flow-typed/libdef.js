@@ -5,6 +5,6 @@ declare type Extension = ".css" | ".html" | ".js" | ".svg";
  * {@link ../src/index.js|minify} results.
  * Logs formatted output with the provided file extension tag.
  */
-declare function log(this: Promise<string>, extname: Extension): void;
+declare function log<T>(this: Promise<T>, extname: Extension): void;
 
-declare interface Promise<string> { log: (typeof log); }
+declare interface Promise<T> { log: (typeof log<T>); }
