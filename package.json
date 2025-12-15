@@ -8,6 +8,11 @@
     "import": "./src/index.js"
   },
   "scripts": {
+    "rebase": "git rebase --interactive main~6 && git submodule update --recursive",
+    "branch:src": "cd src/&& git switch --create fix-suppress-error",
+    "reset:lib": "cd lib/&& git branch lib-saved && git reset --hard HEAD^^",
+    "reuse:message": "git commit-lib --reuse-message lib-saved^",
+    "amend:src": "cd src/&& git commit --no-edit --amend --all",
     "gtcfg": "git config --local",
     "alias": "npm run alias:ciam && npm run alias:ada && npm run alias:cisrc && npm run alias:cilib && npm run alias:amlib && npm run alias:mdlib && npm run alias:push",
     "alias:ciam": "npm run gtcfg alias.commit-root 'commit -am'",
@@ -23,6 +28,7 @@
     "amend:lib": "git amend-lib",
     "commit": "git commit-root",
     "push": "git push-all",
+    "flow:stop": "flow stop; while (@(Stop-Process -Name flow -Force -PassThru -ErrorAction Ignore).Length) { Start-Sleep -Seconds 2 }",
     "build": "flow-remove-types src --out-dir lib --pretty --extensions .json,.js",
     "demo": "node --conditions=demo demo"
   },
@@ -32,6 +38,7 @@
   "type": "module",
   "workspaces": [ "src" ],
   "devDependencies": {
+    "flow-bin": "^0.293.0",
     "flow-remove-types": "^2.293.0"
   }
 }

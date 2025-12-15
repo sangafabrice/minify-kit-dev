@@ -1,4 +1,6 @@
+/** @flow */
 import "./log.js";
+// $FlowExpectedError[cannot-resolve-module]
 import minify from "minify-kit-dev";
 
 minify(
