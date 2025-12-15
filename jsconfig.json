@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "minify-kit-dev": [
+                "./src"
+            ]
+        }
+    },
+    "include": [
+        "demo/**/*",
+        "flow-typed/**/*",
+        "src/**/*"
+    ]
+}
