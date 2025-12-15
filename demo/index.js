@@ -1,8 +1,7 @@
 import "./log.js";
 import minify from "minify-kit-dev";
 
-/** @type {LoggedPromise} */
-const mincss = minify(
+minify(
     ".css", 
    `svg {
         align-self: center;
@@ -10,11 +9,9 @@ const mincss = minify(
         transition: width 1s ease;
         width: var(--play-control-size, 4.25rem);
     }`
-);
-mincss.log(".css");
+).log(".css");
 
-/** @type {LoggedPromise} */
-const minhtml = minify(
+minify(
     ".html", 
    `<template>
         <style></style>
@@ -24,23 +21,18 @@ const minhtml = minify(
             </div>
         </div>
     </template>`
-);
-minhtml.log(".html");
+).log(".html");
 
-/** @type {LoggedPromise} */
-const minjs = minify(
+minify(
     ".js", 
    `const greeting = { normal: "Hello World!" };
     console.log(greeting.normal);`
-);
-minjs.log(".js");
+).log(".js");
 
-/** @type {LoggedPromise} */
-const minsvg = minify(
+minify(
     ".svg", 
    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img">
         <title lang="en">Unmute</title>
         <rect width="100%" height="100%" fill="transparent"/>
     </svg>`
-);
-minsvg.log(".svg");
+).log(".svg");
