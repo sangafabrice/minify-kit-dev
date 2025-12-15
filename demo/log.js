@@ -1,12 +1,4 @@
 /**
- * @typedef {".css" | ".html" | ".js" | ".svg"} Extension
- */
-
-/**
- * @typedef {Promise & { log: (typeof log) }} LoggedPromise
- */
-
-/**
  * Extends Promise prototype with a logging helper for
  * {@link ../src/index.js|minify} results.
  * Logs formatted output with the provided file extension tag.
