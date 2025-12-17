@@ -8,13 +8,14 @@
     "import": "./src/index.js"
   },
   "scripts": {
-    "rebase": "git rebase --interactive main~6 && git submodule update --recursive",
-    "branch:src": "cd src/&& git switch --create fix-suppress-error",
-    "reset:lib": "cd lib/&& git branch lib-saved && git reset --hard HEAD^^",
-    "reuse:message": "git commit-lib --reuse-message lib-saved^",
-    "amend:src": "cd src/&& git commit --no-edit --amend --all",
+    "reuse:message": "git commit-lib --reuse-message lib-saved && cd lib/ && git branch --delete --force lib-saved",
+    "merge:src": "git ls-tree main~4 | ConvertFrom-String -PropertyNames Mode,P2,Commit | Where-Object -Property Mode -EQ 160000 | Select-Object -ExpandProperty Commit | ForEach-Object -Process { Set-Location -Path src/ && git switch --detach $_  }",
+    "use:pwsh": "npm config set script-shell=pwsh --location=project",
+    "package:update": "npx --no --yes npm-check-updates --upgrade --workspaces && npm install",
+    "npm:install": "npm install --save-dev flow-typed svgo terser",
+    "flowtyped": "(flow-typed install | Where-Object { $_.Contains(\"`e[32m.\\flow-typed\\npm\\\") }) -replace \".*`e\\[32m(.*)`e\\[39m.*\",'$1' | Remove-Item",
     "gtcfg": "git config --local",
-    "alias": "npm run alias:ciam && npm run alias:ada && npm run alias:cisrc && npm run alias:cilib && npm run alias:amlib && npm run alias:mdlib && npm run alias:push",
+    "alias": "npm run alias:ciam && npm run alias:ada && npm run alias:cisrc && npm run alias:cilib && npm run alias:amlib && npm run alias:mdlib && npm run alias:push && npm run alias:upsrc",
     "alias:ciam": "npm run gtcfg alias.commit-root 'commit -am'",
     "alias:ada": "cd src/&& git config --local alias.stage-all 'add -A'",
     "alias:cisrc": "npm run gtcfg alias.commit-src '!cd src/&& git stage-all && git commit -m'",
@@ -22,14 +23,16 @@
     "alias:amlib": "npm run gtcfg alias.amend-lib '!git commit-lib --no-edit --amend'",
     "alias:mdlib": "npm run gtcfg alias.make-lib '!cd src/&& git worktree add ../lib'",
     "alias:push": "npm run gtcfg alias.push-all 'push --all --recurse-submodules=on-demand'",
+    "alias:upsrc": "npm run gtcfg alias.update-src 'submodule update --remote --merge'",
     "worktree": "git make-lib",
     "commit:src": "git commit-src",
+    "update:src": "git update-src",
     "commit:lib": "git commit-lib",
     "amend:lib": "git amend-lib",
     "commit": "git commit-root",
     "push": "git push-all",
     "flow:stop": "flow stop; while (@(Stop-Process -Name flow -Force -PassThru -ErrorAction Ignore).Length) { Start-Sleep -Seconds 2 }",
-    "build": "flow-remove-types src --out-dir lib --pretty --extensions .json,.js",
+    "build": "flow-remove-types src --out-dir lib --pretty --extensions '.json,.js'",
     "demo": "node --conditions=demo demo"
   },
   "keywords": [],
@@ -38,7 +41,10 @@
   "type": "module",
   "workspaces": [ "src" ],
   "devDependencies": {
-    "flow-bin": "^0.293.0",
-    "flow-remove-types": "^2.293.0"
+    "flow-bin": "^0.294.0",
+    "flow-remove-types": "^2.293.0",
+    "flow-typed": "^4.1.1",
+    "svgo": "^4.0.0",
+    "terser": "^5.44.1"
   }
 }
