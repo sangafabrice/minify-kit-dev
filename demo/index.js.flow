@@ -1,5 +1,5 @@
 /** @flow */
 import type { Extension } from "../src/index.js";
-import Promise from "../demo/log.js";
+import Promise from "./log.js";
 
 declare export default function minify(Extension, string): Promise<string>;

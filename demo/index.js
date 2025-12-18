@@ -1,5 +1,8 @@
 /** @flow */
 import "./log.js";
+/*:: import minify from "./index.js.flow"; */
+// $FlowExpectedError[name-already-bound]
+// $FlowExpectedError[cannot-resolve-module]
 import minify from "minify-kit-dev";
 
 minify(
