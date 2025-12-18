@@ -1,4 +1,4 @@
 {
     "javascript.validate.enable": false,
-    "javascript.suggest.enabled": true
+    "javascript.suggest.enabled": false
 }
