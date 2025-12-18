@@ -3,6 +3,7 @@
 !<PROJECT_ROOT>/src/
 !<PROJECT_ROOT>/demo/
 !<PROJECT_ROOT>/flow-typed/
+!<PROJECT_ROOT>/@flowtyped/
 !<PROJECT_ROOT>/node_modules/
 
 [include]

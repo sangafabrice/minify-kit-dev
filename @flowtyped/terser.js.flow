@@ -1,0 +1,42 @@
+/** @flow */
+type ECMA = 5 | 2015 | 2016 | 2017 | 2018 | 2019 | 2020;
+type CompressOptions = any;
+type MangleOptions = any;
+type FormatOptions = any;
+type ParseOptions = any;
+type SourceMapOptions = any;
+type EncodedSourceMap = any;
+type DecodedSourceMap = any;
+
+type MinifyOptions = {
+  compress?: boolean | CompressOptions;
+  ecma?: ECMA;
+  enclose?: boolean | string;
+  ie8?: boolean;
+  keep_classnames?: boolean | RegExp;
+  keep_fnames?: boolean | RegExp;
+  mangle?: boolean | MangleOptions;
+  module?: boolean;
+  nameCache?: Object;
+  format?: FormatOptions;
+  /** @deprecated */
+  output?: FormatOptions;
+  parse?: {
+    bare_returns?: boolean;
+    /** @deprecated */
+    ecma?: ECMA;
+    html5_comments?: boolean;
+    shebang?: boolean;
+  };
+  safari10?: boolean;
+  sourceMap?: boolean | SourceMapOptions;
+  toplevel?: boolean;
+};
+
+type MinifyOutput = {
+  code?: string;
+  map?: EncodedSourceMap | string;
+  decoded_map?: DecodedSourceMap | null;
+};
+
+declare export function minify(files: string | string[] | { [file: string]: string }, options?: MinifyOptions): Promise<MinifyOutput>;
