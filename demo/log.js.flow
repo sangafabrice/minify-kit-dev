@@ -1,0 +1,12 @@
+/** @flow */
+import type { Extension } from "../src/index.js";
+
+declare function log (this: Promise<string>, extname: Extension): void;
+
+declare export default class Promise<+R = mixed> {
+    then<U = mixed>(
+      onFulfill: (value: R) => Promise<U> | U,
+      onReject: null | void | ((error: any) => Promise<U> | U)
+    ): Promise<U>;
+    log: (typeof log);
+}
