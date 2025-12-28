@@ -1,5 +1,4 @@
 /** @flow */
-import "./log.js";
 /*:: import minify from "./index.js.flow"; */
 // $FlowExpectedError[name-already-bound]
 import minify from "minify-kit";
