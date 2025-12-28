@@ -1,4 +1,4 @@
 {
-  "main": "hook.js",
-  "type": "commonjs"
+  "main": "hook.cjs",
+  "type": "module"
 }
