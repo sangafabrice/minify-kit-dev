@@ -1,7 +1,10 @@
 /** @flow */
-/*:: import minify from "./index.js.flow"; */
 // $FlowExpectedError[name-already-bound]
 import minify from "minify-kit";
+import type { Extension } from "minify-kit";
+import type Promise from "./log.js";
+
+declare function minify(Extension, string): Promise<string>;
 
 minify(
     ".css", 
