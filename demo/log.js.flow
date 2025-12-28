@@ -1,5 +1,5 @@
 /** @flow */
-import type { Extension } from "../src/index.js";
+import type { Extension } from "minify-kit";
 
 declare function log (this: Promise<string>, extname: Extension): void;
 
