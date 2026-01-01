@@ -1,10 +1,19 @@
 /** @flow */
 // $FlowExpectedError[name-already-bound]
 import minify from "minify-kit";
+// $FlowExpectedError[cannot-resolve-module]
+import { createRequire } from "node:module";
+
+/* ::
 import type { Extension } from "minify-kit";
 import type Promise from "./log.js";
 
 declare function minify(Extension, string): Promise<string>;
+*/
+
+const require = createRequire(import.meta.url);
+
+[ "flow-remove-types/register", "./log" ].forEach(require);
 
 minify(
     ".css",
