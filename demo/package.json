@@ -1,4 +1,4 @@
 {
-  "main": "hook.cjs",
+  "main": "hook.js",
   "type": "module"
 }
