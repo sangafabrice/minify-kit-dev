@@ -15,6 +15,20 @@ const require = createRequire(import.meta.url);
 
 [ "flow-remove-types/register", "./log" ].forEach(require);
 
+(async function () {
+    const minify = (await import("minify-kit")).default;
+    const result = minify(
+        ".css",
+       `svg {
+            align-self: center;
+            justify-self: center;
+            transition: width 1s ease;
+            width: var(--play-control-size, 4.25rem);
+        }`
+    );
+    console.log("inside async function [.css]: ", await result);
+})()
+
 minify(
     ".css",
    `svg {
