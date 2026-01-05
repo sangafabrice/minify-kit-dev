@@ -1,33 +1,13 @@
 /** @flow */
-// $FlowExpectedError[name-already-bound]
-import minify from "minify-kit";
-// $FlowExpectedError[cannot-resolve-module]
-import { createRequire } from "node:module";
-
-/* ::
 import type { Extension } from "minify-kit";
 import type Promise from "./log.js";
 
 declare function minify(Extension, string): Promise<string>;
-*/
-
-const require = createRequire(import.meta.url);
 
 [ "flow-remove-types/register", "./log" ].forEach(require);
 
-(async function () {
-    const minify = (await import("minify-kit")).default;
-    const result = minify(
-        ".css",
-       `svg {
-            align-self: center;
-            justify-self: center;
-            transition: width 1s ease;
-            width: var(--play-control-size, 4.25rem);
-        }`
-    );
-    console.log("inside async function [.css]: ", await result);
-})()
+// $FlowExpectedError[name-already-bound]
+const minify = require("minify-kit").default;
 
 minify(
     ".css",

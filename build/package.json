@@ -1,0 +1,18 @@
+{
+  "name": "build",
+  "version": "1.0.0",
+  "description": "Minifier kit builder",
+  "main": "index.js",
+  "bin": {
+    "commit-src": "commit-src.ps1",
+    "flowstop": "flowstop.js"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "Fabrice Sanga",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "find-process": "^2.0.0"
+  }
+}

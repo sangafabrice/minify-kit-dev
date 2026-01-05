@@ -2,4 +2,3 @@ node_modules
 /lib
 package-lock.json
 /flow-typed/npm
-/@flowtyped/html-minifier-terser.js.flow

@@ -7,21 +7,20 @@
     ".": "./src/index.js"
   },
   "scripts": {
-    "html:terser": "$tsFolder = $Env:LOCALAPPDATA + '/Microsoft/TypeScript/';$base = $tsFolder + ([version[]] (Get-ChildItem $tsFolder).Name | sort)[-1] + '/node_modules/@types';$terser = Join-path $base html-minifier-terser;tsflow --no-prettier $terser;$flow = $terser + '/index.js.flow';@('/** @flow */') + (Get-Content $flow) | Out-File -Path '@flowtyped/html-minifier-terser.js.flow';Remove-Item $flow",
-    "package:update": "npx --no --yes npm-check-updates --upgrade --workspaces && npm install",
-    "flow:stop": "flow stop; while (@(Stop-Process -Name flow -Force -PassThru -ErrorAction Ignore).Length) { Start-Sleep -Seconds 2 }",
-    "watch": "node --watch demo",
-    "demo": "node demo"
+    "preinstall": "npx --no --yes npm-check-updates --upgrade --workspaces",
+    "commit:src": "commit-src",
+    "push": "git push --all --recurse-submodules=on-demand",
+    "flow:stop": "flowstop",
+    "watch": "flow-node --watch demo",
+    "demo": "flow-node demo"
   },
   "keywords": [],
   "author": "Fabrice Sanga (https://github.com/sangafabrice)",
   "license": "ISC",
   "type": "module",
-  "workspaces": [ "src" ],
+  "workspaces": [ "src", "build" ],
   "devDependencies": {
-    "@flowts/babel-plugin-recast": "^0.16.0",
     "flow-bin": "^0.295.0",
-    "flow-remove-types": "^2.295.0",
-    "tsflow": "^0.16.0"
+    "flow-remove-types": "^2.295.0"
   }
 }
