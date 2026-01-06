@@ -5,6 +5,7 @@
   "main": "index.js",
   "bin": {
     "commit-src": "commit-src.js",
+    "push": "push.js",
     "flowstop": "flowstop.js"
   },
   "scripts": {},

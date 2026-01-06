@@ -7,9 +7,9 @@
     ".": "./src/index.js"
   },
   "scripts": {
-    "preinstall": "npx --no --yes npm-check-updates --upgrade --workspaces",
+    "install": "ncu -w",
     "commit:src": "commit-src",
-    "push": "git push --all --recurse-submodules=on-demand",
+    "push": "push",
     "flow:stop": "flowstop",
     "watch": "flow-node --watch demo",
     "demo": "flow-node demo"
@@ -21,6 +21,7 @@
   "workspaces": [ "src", "build" ],
   "devDependencies": {
     "flow-bin": "^0.295.0",
-    "flow-remove-types": "^2.295.0"
+    "flow-remove-types": "^2.295.0",
+    "npm-check-updates": "^19.3.1"
   }
 }
