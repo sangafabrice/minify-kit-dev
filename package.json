@@ -7,7 +7,7 @@
     ".": "./src/index.js"
   },
   "scripts": {
-    "install": "ncu -w",
+    "postinstall": "install",
     "commit:src": "commit-src",
     "push": "push",
     "flow:stop": "flowstop",

@@ -5,6 +5,7 @@
   "main": "index.js",
   "bin": {
     "commit-src": "commit-src.js",
+    "install": "dependencies.js",
     "push": "push.js",
     "flowstop": "flowstop.js"
   },

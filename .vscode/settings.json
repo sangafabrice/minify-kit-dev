@@ -1,9 +1,3 @@
 {
-    "javascript.validate.enable": false,
-    "json.schemas": [
-        {
-            "fileMatch": [ ".ncurc.json" ],
-            "url": "https://raw.githubusercontent.com/raineorshine/npm-check-updates/main/src/types/RunOptions.json"
-        }
-    ]
+    "javascript.validate.enable": false
 }
