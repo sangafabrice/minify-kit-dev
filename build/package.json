@@ -4,7 +4,7 @@
   "description": "Minifier kit builder",
   "main": "index.js",
   "bin": {
-    "commit-src": "commit-src.ps1",
+    "commit-src": "commit-src.js",
     "flowstop": "flowstop.js"
   },
   "scripts": {},
@@ -13,6 +13,7 @@
   "license": "ISC",
   "type": "module",
   "devDependencies": {
-    "find-process": "^2.0.0"
+    "find-process": "^2.0.0",
+    "simple-git": "^3.30.0"
   }
 }
