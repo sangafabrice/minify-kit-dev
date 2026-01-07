@@ -4,7 +4,7 @@ import { simpleGit } from "simple-git";
 
 const git = simpleGit();
 
-console.log("%j", await git.push([
+git.push([
     "--all",
     "--recurse-submodules=on-demand"
-]));
+]).then(console.log);
