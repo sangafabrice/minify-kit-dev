@@ -5,6 +5,8 @@
   "private": true,
   "main": "src/index.js",
   "scripts": {
+    "untrack": "git rm --cached .vscode/settings.json",
+    "disable": "disable-validation",
     "postinstall": "install",
     "commit:src": "commit-src",
     "push": "push",
