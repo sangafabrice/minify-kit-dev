@@ -1,10 +1,8 @@
 [ignore]
-<PROJECT_ROOT>
-!<PROJECT_ROOT>/src/
-!<PROJECT_ROOT>/demo/
-!<PROJECT_ROOT>/flow-typed/
-!<PROJECT_ROOT>/@flowtyped/
-!<PROJECT_ROOT>/node_modules/
+<PROJECT_ROOT>/\.vscode/
+<PROJECT_ROOT>/build/
+<PROJECT_ROOT>/package\-lock\.json$
+<PROJECT_ROOT>/package\.json$
 
 [include]
 

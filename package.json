@@ -1,11 +1,9 @@
 {
   "name": "minify-kit-dev",
   "version": "1.0.0",
-  "description": "",
+  "description": "Minify-kit private NPM package development",
+  "private": true,
   "main": "src/index.js",
-  "exports": {
-    ".": "./src/index.js"
-  },
   "scripts": {
     "postinstall": "install",
     "commit:src": "commit-src",
@@ -21,7 +19,6 @@
   "workspaces": [ "src", "build" ],
   "devDependencies": {
     "flow-bin": "^0.295.0",
-    "flow-remove-types": "^2.295.0",
-    "npm-check-updates": "^19.3.1"
+    "flow-remove-types": "^2.295.0"
   }
 }

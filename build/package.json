@@ -2,9 +2,11 @@
   "name": "build",
   "version": "1.0.0",
   "description": "Minifier kit builder",
+  "private": true,
   "main": "index.js",
   "bin": {
     "commit-src": "commit-src.js",
+    "flowlist": "flowlist.ps1",
     "install": "dependencies.js",
     "push": "push.js",
     "flowstop": "flowstop.js"
@@ -16,6 +18,7 @@
   "type": "module",
   "devDependencies": {
     "find-process": "^2.0.0",
+    "npm-check-updates": "^19.3.1",
     "simple-git": "^3.30.0"
   }
 }

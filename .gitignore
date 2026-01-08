@@ -1,4 +1,2 @@
-node_modules
-/lib
-package-lock.json
-/flow-typed/npm
+/node_modules/
+/package-lock.json
