@@ -19,7 +19,7 @@
   "type": "module",
   "workspaces": [ "src", "build" ],
   "devDependencies": {
-    "flow-bin": "^0.295.0",
-    "flow-remove-types": "^2.295.0"
+    "flow-bin": "^0.297.0",
+    "flow-remove-types": "^2.297.0"
   }
 }

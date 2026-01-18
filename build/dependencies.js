@@ -4,5 +4,6 @@ import ncu from "npm-check-updates";
 
 ncu.run({
     upgrade: true,
-    install: "always"
+    install: "always",
+    workspaces: true
 }).then(console.log);
