@@ -20,7 +20,7 @@
   "devDependencies": {
     "comment-json": "^4.5.1",
     "find-process": "^2.0.0",
-    "npm-check-updates": "^19.3.1",
+    "npm-check-updates": "^19.3.2",
     "simple-git": "^3.30.0"
   }
 }
