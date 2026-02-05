@@ -1,3 +1,5 @@
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/sangafabrice/minify-kit-dev)
+
 ## Project Setup
 
 ### 1. Clone the project and submodules:
