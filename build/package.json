@@ -7,7 +7,7 @@
   "bin": {
     "commit-src": "commit-src.js",
     "disable-validation": "settings.js",
-    "lint": "lint.ps1",
+    "lint": "lint.js",
     "install": "dependencies.js",
     "push": "push.js",
     "flowstop": "flowstop.js"
