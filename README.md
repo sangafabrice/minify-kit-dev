@@ -23,7 +23,7 @@ npm run disable
 
 ### Note:
 
-For this commit I installed a deprecated extension for testing:
+For this commit I uninstalled a deprecated extension for testing:
 ```bash
-code --install-extension dbaeumer.jshint
+code --uninstall-extension dbaeumer.jshint
 ```
