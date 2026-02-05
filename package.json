@@ -5,6 +5,7 @@
   "private": true,
   "main": "src/index.js",
   "scripts": {
+    "lint": "lint",
     "disable": "disable-validation",
     "postinstall": "install",
     "commit:src": "commit-src",

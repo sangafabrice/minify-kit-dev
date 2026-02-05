@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+/*jslint node white for*/
 import jsonc from "comment-json";
 import fsp from "node:fs/promises";
 
@@ -15,15 +16,17 @@ settingsText.then(jsonc.parse)
     .then(function (settings) {
         const PROPERTY = "javascript.validate.enable";
 
-        if (settings[PROPERTY] === false)
+        if (settings[PROPERTY] === false) {
             throw "javascript validation already disabled";
+        }
 
         // Disabling javascript validation and comment
         settings[PROPERTY] = false;
-        (settings[Symbol.for("before:" + PROPERTY)] ??= []).push({
+        const comment = settings[Symbol.for("before:" + PROPERTY)] ?? [];
+        comment.push({
+            inline: false,
             type: "LineComment",
-            value: " @generated: Required when setting up Flow.js",
-            inline: false
+            value: " @generated: Required when setting up Flow.js"
         });
 
         return settingsText.then(detectIndent)
@@ -31,14 +34,20 @@ settingsText.then(jsonc.parse)
     })
     .then(fsp.writeFile.bind(fsp, settingsFile))
     .then(() => console.log("✔ disabled javascript validation"))
-    .catch(console.log)
+    .catch(console.log);
 
 function detectIndent(text) {
     const lines = text.split(/\r?\n/);
 
-    for (const line of lines) {
-        const match = line.match(/^(\s+)\S/);
-        if (match) return match[1].includes("\t") ? "\t" : match[1].length;
+    let i;
+    for (i = 0; i < lines.length; i+=1) {
+        const match = lines[i].match(/^(\s+)\S/);
+        if (match) {
+            return (
+                match[1].includes("\t")
+                    ? "\t" : match[1].length
+            );
+        }
     }
 
     // fallback
