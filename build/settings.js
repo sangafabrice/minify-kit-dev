@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
+import fs from "node:fs/promises";
 import jsonc from "comment-json";
-import fsp from "node:fs/promises";
 
 const vscodedir = ".vscode";
 const settingsFile = vscodedir + "/settings.json";
-const settingsText = fsp
+const settingsText = fs
     .mkdir(vscodedir, { recursive: true })
     .then(() =>
-        fsp
+        fs
             .readFile(settingsFile, { encoding: "utf8" })
             .catch(() => "{\n}")
     );
@@ -39,7 +39,7 @@ settingsText
                 jsonc.stringify.bind(jsonc, settings, null)
             );
     })
-    .then(fsp.writeFile.bind(fsp, settingsFile))
+    .then(fs.writeFile.bind(fs, settingsFile))
     .then(() =>
         console.log("✔ disabled javascript validation")
     )

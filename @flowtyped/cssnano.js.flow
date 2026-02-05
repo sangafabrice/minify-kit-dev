@@ -3,7 +3,7 @@ import { Processor } from "postcss";
 
 type Options = {
     preset?: any,
-    plugins?: any[],
+    plugins?: Array<any>,
     configFile?: string
 };
 

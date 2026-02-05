@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
+import { basename } from "node:path";
 import findObj from "find-process";
 import flowBin from "flow-bin";
 import { spawn } from "node:child_process";
-import { basename } from "node:path";
 const find = findObj.default;
 
 spawn(flowBin, ["stop"], { stdio: "inherit" }).on(

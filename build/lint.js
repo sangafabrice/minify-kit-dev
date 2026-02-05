@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import fs from "node:fs";
 import { JSHINT } from "jshint";
+import fs from "node:fs";
 
 function log(file, { errors }) {
     console.log(

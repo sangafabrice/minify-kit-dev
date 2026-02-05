@@ -1,10 +1,9 @@
+/* eslint-disable no-redeclare */
 /** @flow */
-/* jshint ignore:start */
 import type { Extension } from "minify-kit";
 import type Promise from "./log.js";
 
 declare function minify(Extension, string): Promise<string>;
-/* jshint ignore:end */
 
 ["flow-remove-types/register", "./log"].forEach(require);
 

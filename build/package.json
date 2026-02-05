@@ -19,10 +19,15 @@
   "license": "ISC",
   "type": "module",
   "devDependencies": {
-    "@jslint-org/jslint": "^2025.12.28",
+    "@eslint/js": "^9.39.2",
+    "@html-eslint/eslint-plugin": "^0.54.2",
+    "@html-eslint/parser": "^0.54.0",
     "comment-json": "^4.5.1",
+    "eslint": "^9.39.2",
+    "eslint-plugin-ft-flow": "^3.0.11",
     "find-process": "^2.0.0",
-    "jshint": "^2.13.6",
+    "globals": "^17.3.0",
+    "hermes-eslint": "^0.33.3",
     "npm-check-updates": "^19.3.2",
     "prettier": "^3.8.1",
     "simple-git": "^3.30.0"

@@ -5,7 +5,7 @@ type Config = {
     path?: string,
     multipass?: boolean,
     floatPrecision?: number,
-    plugins?: PluginConfig[],
+    plugins?: Array<PluginConfig>,
     js2svg?: {
         doctypeStart?: string,
         doctypeEnd?: string,

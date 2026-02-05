@@ -24,5 +24,8 @@ type Hint = {
 };
 
 declare export class HTMLHint {
-    static verify(html: string, ruleset?: Ruleset): Hint[];
+    static verify(
+        html: string,
+        ruleset?: Ruleset
+    ): Array<Hint>
 }

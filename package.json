@@ -6,7 +6,8 @@
   "main": "src/index.js",
   "scripts": {
     "pretty": "prettifier",
-    "lint": "lint",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "disable": "disable-validation",
     "postinstall": "install",
     "commit:src": "commit-src",

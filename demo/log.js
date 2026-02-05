@@ -1,8 +1,7 @@
+/* eslint-disable ft-flow/no-mixed */
 /** @flow */
 
-/* jshint ignore:start */
 import type { Extension } from "minify-kit";
-/* jshint ignore:end */
 
 function log(
     this: Promise<string>,
@@ -14,7 +13,6 @@ function log(
     );
 }
 
-/* jshint ignore:start */
 declare export default class Promise<+R = mixed> {
     then<U = mixed>(
         onFulfill: (value: R) => Promise<U> | U,
@@ -23,8 +21,7 @@ declare export default class Promise<+R = mixed> {
             | void
             | ((error: any) => Promise<U> | U)
     ): Promise<U>;
-    log: typeof log;
+    log: typeof log
 }
-/* jshint ignore:end */
 
 Promise.prototype.log = log;
