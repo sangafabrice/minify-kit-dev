@@ -1,16 +1,15 @@
 /** @flow */
 
-/*jslint node white this long*/
-/*jslint-disable*/
+/* jshint ignore:start */
 import type { Extension } from "minify-kit";
-/*jslint-enable*/
+/* jshint ignore:end */
 
 function log (/*:: this: Promise<string>, */ extname/* : Extension */)/* : void */ {
     const ext = `[${extname}]:`;
     this.then(console.log.bind(console, ext.padEnd(8, " ")));
 }
 
-/*jslint-disable*/
+/* jshint ignore:start */
 declare export default class Promise<+R = mixed> {
     then<U = mixed>(
       onFulfill: (value: R) => Promise<U> | U,
@@ -18,6 +17,6 @@ declare export default class Promise<+R = mixed> {
     ): Promise<U>;
     log: (typeof log);
 }
-/*jslint-enable*/
+/* jshint ignore:end */
 
 Promise.prototype.log = log;

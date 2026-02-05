@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-/*jslint node white for*/
 import jsonc from "comment-json";
 import fsp from "node:fs/promises";
 
@@ -43,10 +42,7 @@ function detectIndent(text) {
     for (i = 0; i < lines.length; i+=1) {
         const match = lines[i].match(/^(\s+)\S/);
         if (match) {
-            return (
-                match[1].includes("\t")
-                    ? "\t" : match[1].length
-            );
+            return match[1].includes("\t") ? "\t" : match[1].length;
         }
     }
 

@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-/*jslint node*/
 import ncu from "npm-check-updates";
 
 ncu.run({

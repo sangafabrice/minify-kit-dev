@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-/*jslint node white fart*/
 import findObj from "find-process";
 import flowBin from "flow-bin";
 import { spawn } from "node:child_process";

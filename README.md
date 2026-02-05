@@ -20,3 +20,10 @@ npm install
 ```bash
 npm run disable
 ```
+
+### Note:
+
+For this commit I installed a deprecated extension for testing:
+```bash
+code --install-extension dbaeumer.jshint
+```

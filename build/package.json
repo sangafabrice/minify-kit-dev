@@ -21,6 +21,7 @@
     "@jslint-org/jslint": "^2025.12.28",
     "comment-json": "^4.5.1",
     "find-process": "^2.0.0",
+    "jshint": "^2.13.6",
     "npm-check-updates": "^19.3.2",
     "simple-git": "^3.30.0"
   }
