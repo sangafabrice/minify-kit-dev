@@ -9,7 +9,7 @@
     "disable-validation": "settings.js",
     "lint": "lint.js",
     "install": "dependencies.js",
-    "prettifier": "pretty.ps1",
+    "prettifier": "pretty.js",
     "push": "push.js",
     "flowstop": "flowstop.js"
   },

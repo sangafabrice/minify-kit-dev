@@ -3,18 +3,14 @@
 import fs from "node:fs";
 import { JSHINT } from "jshint";
 
-function log(file, { errors: warnings }) {
+function log(file, { errors }) {
     console.log(
         "%s jshint %s",
-        !warnings.length ? "✔" : "✖",
+        !errors.length ? "✔" : "✖",
         file
     );
-    for (const {
-        line,
-        character: column,
-        reason: message
-    } of warnings) {
-        console.log(" %d:%d %s", line, column, message);
+    for (const { line, character, reason } of errors) {
+        console.log(" %d:%d %s", line, character, reason);
     }
 }
 
