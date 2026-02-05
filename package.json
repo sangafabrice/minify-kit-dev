@@ -5,7 +5,7 @@
   "private": true,
   "main": "src/index.js",
   "scripts": {
-    "lint": "jshint . --extra-ext .cjs",
+    "lint": "lint",
     "disable": "disable-validation",
     "postinstall": "install",
     "commit:src": "commit-src",

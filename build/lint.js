@@ -1,26 +1,24 @@
 #!/usr/bin/env node
 
-/*jslint-disable*/
-import fs from "node:fs/promises";
-import jslint from "@jslint-org/jslint";
+import fs from "node:fs";
+import { JSHINT } from "jshint";
 
-function log(file, { warnings }) {
-    console.log("jslint %s", file);
-    for (const { line, column, message } of warnings) {
+function log(file, { errors: warnings }) {
+    console.log("%s jshint %s", !warnings.length ? "✔":"✖", file);
+    for (const { line, character: column, reason: message } of warnings) {
         console.log(" %d:%d %s", line, column, message);
     }
 }
 
 async function main(files) {
-    for await (const file of files) {
-        fs.readFile(file, "utf8")
-            .then(jslint)
-            .then(log.bind(null, file))
-            .catch(console.error);
+    for (const file of files) {
+        const source = fs.readFileSync(file, "utf8");
+        JSHINT(source, { esversion: 11 });
+        log(file, JSHINT);
     }
 }
 
-main(fs.glob("**/*.{js,mjs,cjs,json}", {
+main(fs.globSync("**/*.{js,mjs,cjs,json}", {
     exclude: [
         "node_modules/**",
         ".vscode/**",
@@ -28,4 +26,3 @@ main(fs.glob("**/*.{js,mjs,cjs,json}", {
         "**/package-lock.json"
     ]
 }));
-/*jslint-enable*/
