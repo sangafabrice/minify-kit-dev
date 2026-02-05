@@ -1,6 +1,6 @@
 {
-    "compilerOptions": {
-        "checkJs": true,
-        "module": "nodenext"
-    }
+  "compilerOptions": {
+    "checkJs": true,
+    "module": "nodenext"
+  }
 }

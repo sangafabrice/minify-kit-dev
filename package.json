@@ -5,6 +5,7 @@
   "private": true,
   "main": "src/index.js",
   "scripts": {
+    "pretty": "prettifier",
     "lint": "lint",
     "disable": "disable-validation",
     "postinstall": "install",
@@ -18,9 +19,46 @@
   "author": "Fabrice Sanga (https://github.com/sangafabrice)",
   "license": "ISC",
   "type": "module",
-  "workspaces": [ "src", "build" ],
+  "workspaces": [
+    "src",
+    "build"
+  ],
   "devDependencies": {
     "flow-bin": "^0.299.0",
     "flow-remove-types": "^2.299.0"
+  },
+  "prettier": {
+    "endOfLine": "lf",
+    "trailingComma": "none",
+    "arrowParens": "avoid",
+    "bracketSameLine": false,
+    "experimentalOperatorPosition": "end",
+    "htmlWhitespaceSensitivity": "strict",
+    "objectWrap": "collapse",
+    "printWidth": 60,
+    "singleAttributePerLine": true,
+    "tabWidth": 4,
+    "overrides": [
+      {
+        "files": [
+          "**/*.json",
+          "**/.prettierrc"
+        ],
+        "options": {
+          "printWidth": 30,
+          "tabWidth": 2
+        }
+      },
+      {
+        "files": [
+          "demo/*.*",
+          "src/**/*.js.flow",
+          "flow-typed/*.js"
+        ],
+        "options": {
+          "parser": "flow"
+        }
+      }
+    ]
   }
 }

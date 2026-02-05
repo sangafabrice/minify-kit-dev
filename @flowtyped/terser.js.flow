@@ -9,34 +9,37 @@ type EncodedSourceMap = any;
 type DecodedSourceMap = any;
 
 type MinifyOptions = {
-  compress?: boolean | CompressOptions;
-  ecma?: ECMA;
-  enclose?: boolean | string;
-  ie8?: boolean;
-  keep_classnames?: boolean | RegExp;
-  keep_fnames?: boolean | RegExp;
-  mangle?: boolean | MangleOptions;
-  module?: boolean;
-  nameCache?: Object;
-  format?: FormatOptions;
-  /** @deprecated */
-  output?: FormatOptions;
-  parse?: {
-    bare_returns?: boolean;
+    compress?: boolean | CompressOptions,
+    ecma?: ECMA,
+    enclose?: boolean | string,
+    ie8?: boolean,
+    keep_classnames?: boolean | RegExp,
+    keep_fnames?: boolean | RegExp,
+    mangle?: boolean | MangleOptions,
+    module?: boolean,
+    nameCache?: Object,
+    format?: FormatOptions,
     /** @deprecated */
-    ecma?: ECMA;
-    html5_comments?: boolean;
-    shebang?: boolean;
-  };
-  safari10?: boolean;
-  sourceMap?: boolean | SourceMapOptions;
-  toplevel?: boolean;
+    output?: FormatOptions,
+    parse?: {
+        bare_returns?: boolean,
+        /** @deprecated */
+        ecma?: ECMA,
+        html5_comments?: boolean,
+        shebang?: boolean
+    },
+    safari10?: boolean,
+    sourceMap?: boolean | SourceMapOptions,
+    toplevel?: boolean
 };
 
 type MinifyOutput = {
-  code?: string;
-  map?: EncodedSourceMap | string;
-  decoded_map?: DecodedSourceMap | null;
+    code?: string,
+    map?: EncodedSourceMap | string,
+    decoded_map?: DecodedSourceMap | null
 };
 
-declare export function minify(files: string | string[] | { [file: string]: string }, options?: MinifyOptions): Promise<MinifyOutput>;
+declare export function minify(
+    files: string | string[] | { [file: string]: string },
+    options?: MinifyOptions
+): Promise<MinifyOutput>;

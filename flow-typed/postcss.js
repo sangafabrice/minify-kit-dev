@@ -1,3 +1,3 @@
 declare namespace postcss {
-  type AcceptedPlugin = any;
+    type AcceptedPlugin = any;
 }

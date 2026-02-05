@@ -4,8 +4,16 @@ import fs from "node:fs";
 import { JSHINT } from "jshint";
 
 function log(file, { errors: warnings }) {
-    console.log("%s jshint %s", !warnings.length ? "✔":"✖", file);
-    for (const { line, character: column, reason: message } of warnings) {
+    console.log(
+        "%s jshint %s",
+        !warnings.length ? "✔" : "✖",
+        file
+    );
+    for (const {
+        line,
+        character: column,
+        reason: message
+    } of warnings) {
         console.log(" %d:%d %s", line, column, message);
     }
 }
@@ -18,11 +26,13 @@ async function main(files) {
     }
 }
 
-main(fs.globSync("**/*.{js,mjs,cjs,json}", {
-    exclude: [
-        "node_modules/**",
-        ".vscode/**",
-        "flow-typed/**",
-        "**/package-lock.json"
-    ]
-}));
+main(
+    fs.globSync("**/*.{js,mjs,cjs,json}", {
+        exclude: [
+            "node_modules/**",
+            ".vscode/**",
+            "flow-typed/**",
+            "**/package-lock.json"
+        ]
+    })
+);

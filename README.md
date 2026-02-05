@@ -14,7 +14,6 @@ npm install
 
 ### 3. Install vscode-jslint, and Flow Language Support on VS Code as recommended extensions:
 
-
 ### 4. Disable JavaScript validation in VS Code:
 
 ```bash
@@ -24,6 +23,7 @@ npm run disable
 ### Note:
 
 For this commit I uninstalled a deprecated extension for testing:
+
 ```bash
 code --uninstall-extension dbaeumer.jshint
 ```

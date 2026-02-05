@@ -6,16 +6,23 @@ import { spawn } from "node:child_process";
 import { basename } from "node:path";
 const find = findObj.default;
 
-spawn(flowBin, [ "stop" ], { stdio: "inherit" })
-.on("close", function stop() {
-    find("name", basename(flowBin), {strict: true})
-        .then((list) => {
-            if (!list.length) { return; }
+spawn(flowBin, ["stop"], { stdio: "inherit" }).on(
+    "close",
+    function stop() {
+        find("name", basename(flowBin), {
+            strict: true
+        }).then(list => {
+            if (!list.length) {
+                return;
+            }
             list.forEach(({ pid }) => {
                 try {
                     process.kill(pid, "SIGINT");
-                } catch (e) { console.error(e.message); }
+                } catch (e) {
+                    console.error(e.message);
+                }
             });
             setTimeout(stop, 1000);
         });
-});
+    }
+);

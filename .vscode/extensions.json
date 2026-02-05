@@ -1,6 +1,6 @@
-{  
-    "recommendations": [  
-        "flowtype.flow-for-vscode",  
-        "jslint.vscode-jslint"
-    ]  
-}  
+{
+  "recommendations": [
+    "flowtype.flow-for-vscode",
+    "jslint.vscode-jslint"
+  ]
+}
