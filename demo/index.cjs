@@ -22,13 +22,15 @@ minify(
 
 minify(
     ".html",
+    /* html */
     `<template>
-        <style></style>
-        <div id="host">
-            <div id="icon">
-                <slot></slot>
-            </div>
+        <h2>A Great Title</h2>
+        <h4>by nobody else than me.</h4>
+        <div class="image-container">
+            <img src="image.jpg" alt="none">
         </div>
+        <button type="submit" class="back">&lt;</button>
+        <button type="submit" class="forward">&gt;</button>
     </template>`
 ).log(".html");
 
