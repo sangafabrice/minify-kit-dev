@@ -19,11 +19,11 @@
   "license": "ISC",
   "type": "module",
   "devDependencies": {
-    "@eslint/js": "^9.39.2",
+    "@eslint/js": "^10.0.1",
     "@html-eslint/eslint-plugin": "^0.54.2",
     "@html-eslint/parser": "^0.54.0",
     "comment-json": "^4.5.1",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.0",
     "eslint-plugin-ft-flow": "^3.0.11",
     "find-process": "^2.0.0",
     "globals": "^17.3.0",

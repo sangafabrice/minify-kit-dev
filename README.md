@@ -11,7 +11,7 @@ git clone https://github.com/sangafabrice/minify-kit-dev . --recurse-submodules
 ### 2. Install the packages:
 
 ```bash
-npm install
+npm install --force
 ```
 
 ### 3. Install vscode-jslint, and Flow Language Support on VS Code as recommended extensions:

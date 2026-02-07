@@ -27,7 +27,7 @@ minify(
         <h2>A Great Title</h2>
         <h4>by nobody else than me.</h4>
         <div class="image-container">
-            <img src="image.jpg" alt="none">
+            <img src="image.jpg" alt="none"/>
         </div>
         <button type="submit" class="back">&lt;</button>
         <button type="submit" class="forward">&gt;</button>

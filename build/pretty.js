@@ -42,7 +42,7 @@ async function main(files) {
 main(
     fs.glob("**/*.{js,cjs,mjs,html,css,json,flow}", {
         exclude: [
-            "node_modules/**",
+            "**/node_modules/**",
             "dist/**",
             "lib/**",
             "**/package-lock.json"
