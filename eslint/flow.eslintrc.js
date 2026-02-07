@@ -4,7 +4,7 @@ import hermes from "hermes-eslint";
 
 export default defineConfig({
     files: [
-        "{@flowtyped,flow-typed,demo,src}/**/*.{js,cjs,flow}"
+        "{@flowtyped,flow-typed,demo,src}/**/*.{js,mjs,cjs,flow}"
     ],
     ignores: ["**/htmlhint.js"],
     languageOptions: {

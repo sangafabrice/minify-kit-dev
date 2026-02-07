@@ -1,20 +1,14 @@
-/* eslint-disable no-duplicate-imports */
+/* eslint-disable no-redeclare */
 /** @flow */
 import type { Extension } from "minify-kit";
 import type Promise from "./log.js";
-// $FlowExpectedError[cannot-resolve-module]
-import { createRequire } from "node:module";
-// $FlowExpectedError[name-already-bound]
-import minify from "minify-kit";
 
-// eslint-disable-next-line no-redeclare
 declare function minify(Extension, string): Promise<string>;
-
-const require = createRequire(import.meta.url);
 
 ["flow-remove-types/register", "./log"].forEach(require);
 
-console.log("ESM module");
+// $FlowExpectedError[name-already-bound]
+const minify = require("minify-kit");
 
 minify(
     ".css",

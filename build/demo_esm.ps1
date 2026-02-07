@@ -1,6 +1,6 @@
 #!/usr/bin/env pwsh
 
 Set-Location demo/&&
-    flow-remove-types index.js |
+    flow-remove-types index.mjs |
     Out-String |
     node

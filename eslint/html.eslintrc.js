@@ -2,7 +2,7 @@ import { defineConfig } from "eslint/config";
 import html from "@html-eslint/eslint-plugin";
 
 export default defineConfig({
-    files: ["demo/index.{js,cjs}"],
+    files: ["demo/index.{js,mjs,cjs}"],
     plugins: { html },
     extends: ["html/recommended"],
     rules: {
