@@ -1,14 +1,21 @@
-/* eslint-disable no-redeclare */
 /** @flow */
+// $FlowExpectedError[cannot-resolve-module]
+import { createRequire } from "node:module";
+// $FlowExpectedError[name-already-bound]
+import minify from "minify-kit";
+
+/* ::
 import type { Extension } from "minify-kit";
 import type Promise from "./log.js";
 
 declare function minify(Extension, string): Promise<string>;
+*/
 
-["flow-remove-types/register", "./log"].forEach(require);
+const require = createRequire(import.meta.url);
 
-// $FlowExpectedError[name-already-bound]
-const minify = require("minify-kit");
+[ "flow-remove-types/register", "./log" ].forEach(require);
+
+console.log("ESM module");
 
 minify(
     ".css",

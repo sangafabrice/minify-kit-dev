@@ -13,8 +13,10 @@
     "commit:src": "commit-src",
     "push": "push",
     "flow:stop": "flowstop",
-    "watch": "flow-node --watch demo",
-    "demo": "flow-node demo"
+    "watch": "flow-node --watch demo/index.cjs",
+    "demo": "flow-node demo/index.cjs",
+    "watch:esm": "node --watch demo",
+    "demo:esm": "node demo"
   },
   "keywords": [],
   "author": "Fabrice Sanga (https://github.com/sangafabrice)",
