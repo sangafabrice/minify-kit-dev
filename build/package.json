@@ -6,6 +6,7 @@
   "main": "index.js",
   "bin": {
     "commit-src": "commit-src.js",
+    "demo-esm": "demo_esm.ps1",
     "disable-validation": "settings.js",
     "lint": "lint.js",
     "install": "dependencies.js",

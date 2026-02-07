@@ -1,15 +1,14 @@
+/* eslint-disable no-duplicate-imports */
 /** @flow */
+import type { Extension } from "minify-kit";
+import type Promise from "./log.js";
 // $FlowExpectedError[cannot-resolve-module]
 import { createRequire } from "node:module";
 // $FlowExpectedError[name-already-bound]
 import minify from "minify-kit";
 
-/* ::
-import type { Extension } from "minify-kit";
-import type Promise from "./log.js";
-
+// eslint-disable-next-line no-redeclare
 declare function minify(Extension, string): Promise<string>;
-*/
 
 const require = createRequire(import.meta.url);
 
