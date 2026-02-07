@@ -2,11 +2,11 @@ import { defineConfig } from "eslint/config";
 import html from "@html-eslint/eslint-plugin";
 
 export default defineConfig({
-    files: ["**/*.html"],
+    files: ["demo/index.{js,cjs}"],
     plugins: { html },
     extends: ["html/recommended"],
-    language: "html/html",
     rules: {
+        "html/require-button-type": "error",
         "html/indent": "off",
         "html/require-closing-tags": [
             "warn",

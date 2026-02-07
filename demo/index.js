@@ -13,7 +13,7 @@ declare function minify(Extension, string): Promise<string>;
 
 const require = createRequire(import.meta.url);
 
-[ "flow-remove-types/register", "./log" ].forEach(require);
+["flow-remove-types/register", "./log"].forEach(require);
 
 console.log("ESM module");
 
