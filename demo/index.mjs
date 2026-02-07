@@ -1,16 +1,20 @@
-/* eslint-disable no-duplicate-imports */
 /** @flow */
 import type { Extension } from "minify-kit";
 import type Promise from "./log.js";
 // $FlowExpectedError[cannot-resolve-module]
 import { createRequire } from "node:module";
-// $FlowExpectedError[name-already-bound]
-import minify from "minify-kit";
+// $FlowExpectedError[cannot-resolve-module]
+import { join } from "node:path";
 
-// eslint-disable-next-line no-redeclare
-declare function minify(Extension, string): Promise<string>;
+const require = createRequire(
+    // $FlowExpectedError[cannot-resolve-name]
+    import.meta.filename ?? join(process.cwd(), "test.mjs")
+);
 
-const require = createRequire(import.meta.url);
+const minify: (
+    Extension,
+    string
+) => Promise<string> = require("minify-kit");
 
 ["flow-remove-types/register", "./log"].forEach(require);
 

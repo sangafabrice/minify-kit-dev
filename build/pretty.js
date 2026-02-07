@@ -45,7 +45,8 @@ main(
             "**/node_modules/**",
             "dist/**",
             "lib/**",
-            "**/package-lock.json"
+            "**/package-lock.json",
+            "demo/package.json"
         ]
     })
 );
