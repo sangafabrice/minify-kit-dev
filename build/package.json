@@ -21,8 +21,8 @@
   "type": "module",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@html-eslint/eslint-plugin": "^0.54.2",
-    "@html-eslint/parser": "^0.54.0",
+    "@html-eslint/eslint-plugin": "^0.55.0",
+    "@html-eslint/parser": "^0.55.0",
     "comment-json": "^4.5.1",
     "eslint": "^10.0.0",
     "eslint-plugin-ft-flow": "^3.0.11",
@@ -31,6 +31,6 @@
     "hermes-eslint": "^0.33.3",
     "npm-check-updates": "^19.3.2",
     "prettier": "^3.8.1",
-    "simple-git": "^3.30.0"
+    "simple-git": "^3.31.1"
   }
 }
