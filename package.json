@@ -26,8 +26,8 @@
     "build"
   ],
   "devDependencies": {
-    "flow-bin": "^0.301.0",
-    "flow-remove-types": "^2.301.0"
+    "flow-bin": "^0.302.0",
+    "flow-remove-types": "^2.302.0"
   },
   "prettier": {
     "endOfLine": "lf",

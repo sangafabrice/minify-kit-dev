@@ -21,16 +21,16 @@
   "type": "module",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@html-eslint/eslint-plugin": "^0.55.0",
-    "@html-eslint/parser": "^0.55.0",
+    "@html-eslint/eslint-plugin": "^0.57.1",
+    "@html-eslint/parser": "^0.57.1",
     "comment-json": "^4.5.1",
-    "eslint": "^10.0.0",
+    "eslint": "^10.0.2",
     "eslint-plugin-ft-flow": "^3.0.11",
     "find-process": "^2.0.0",
     "globals": "^17.3.0",
     "hermes-eslint": "^0.33.3",
-    "npm-check-updates": "^19.3.2",
+    "npm-check-updates": "^19.5.0",
     "prettier": "^3.8.1",
-    "simple-git": "^3.31.1"
+    "simple-git": "^3.32.2"
   }
 }
